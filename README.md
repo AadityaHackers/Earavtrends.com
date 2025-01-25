@@ -1,2 +1,2 @@
 # Earavtrends.com
-This is My HTML and Internal CSS Project for an E-commerce.
+This is My 1st HTML and Internal CSS Project for an E-commerce.
