@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> EaravTrends.com </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="icon" href="logo.png">
+        <style>
+
+            *{
+                font-family:poppins;
+            }
+
+            p,h1,h2,h3,h4,h5{
+                margin:0;
+                padding:0;
+            }
+
+            body{
+                margin: auto;
+                padding: 0px;
+                overflow-x: hidden;
+            }
+            header{
+                background-color: #0a5847;
+                padding: 5px;
+                border: 3px solid #e4c19d;
+                outline-style: double;
+                outline-color: #0a5847;
+                outline-width: medium;
+            }
+            ul,li,a{
+                list-style-type: none;
+                color: rgb(255, 255, 255);
+                text-decoration: none;
+                text-decoration: solid;
+                display: inline;
+                padding-left: 10px;
+            }
+            .back{
+                flex-grow: 1;
+                background-color: #18a184;
+                height: max-content;
+                width:80%;
+                padding: 10px 0px;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: flex-start;
+            }
+            
+            .backin{
+                background-color: #0a5847;
+                height: max-content;
+                width: 250px;
+                margin-left: 50px;
+                margin-top: 20px;
+                position: relative;
+                padding: 8px;
+                border-radius: 5px;
+                transition:.6s;
+                cursor:pointer;
+            }
+
+            .backin:hover{
+                transform: scale(1.05);
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            }
+
+            #sf{background-color: #0a5847;}
+            input::placeholder {
+                color: rgba(255, 252, 252, 0.616);
+                 }
+            img{
+                width: 250px;
+                height: 160px;
+                object-fit: cover;
+            }
+            @media screen and (min-height:600px){
+                body{
+                    background-color: #0a5847;
+                }
+            }
+            footer{
+                text-align: center;
+                position: relative;
+            }
+            .f1,.f2,.f3,.f4{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-weight: bold;
+                color: #e4c19d;
+            }
+            .product-details {
+                padding: 10px;
+            }
+            .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 10px 0;
+            }
+            .product-description {
+                font-size: 14px;
+                color: #e4c19d;
+                padding:2px;
+                margin: 5px 0;
+            }
+            .product-price {
+                font-size: 16px;
+                font-weight: bold;
+                color: #fdffff;
+                margin: 10px 0;
+
+                padding:2px
+            }
+            .buy-now {
+              
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height:38px;
+              outline:none;
+              width:112px;
+              border:none;
+              color:white;
+              background:#eef1f121;  
+              border-radius: 7px;
+            }
+
+            .buy-now:hover {background-color: #000000;
+            }
+            .add-to-cart-btn {
+                padding:5px 12px;
+                border-radius: 7px;
+                color:white;
+                height:38px;
+                background:#18a184;
+                outline:none;
+                border:none;
+                width: 118px;
+            }
+            .add-to-cart-btn:hover {
+            background-color: #0a5847;
+            }
+            form{
+                width: 100%;
+                height: fit-content;
+                padding:8px;
+                margin:10px 0px;
+                
+            }
+            nav{
+                color: #e4c19d;
+                font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+            .container {
+            
+            position: relative;
+            }
+            .sidebar {
+            width: 15%;
+            background-color: #e4c19d;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px 0px 0px 10px;
+            }
+
+            .sidebar h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #0a5847;
+            }
+            .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            }
+
+            .sidebar ul li {
+            margin-bottom: 10px;
+            }
+
+            .sidebar ul li a {
+            text-decoration: none;
+            color: #18a184;
+            font-size: 14px;
+            transition: color 0.3s ease;
+            }
+            sidebar ul li a:hover {
+            color: #18a184;
+            }
+
+            .filters {
+            margin-top: 30px;
+            }
+    
+            .filters label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #555;
+            }
+            .filters input[type="checkbox"] {
+            margin-right: 8px;
+            }
+
+            .main_cont{
+                display: flex;
+                padding:8px;
+                width:100%;
+                margin:10px 0px;
+            }
+
+            #Search_box{
+                display: block;
+                margin:0 auto;
+                color:white;
+                width:40%;
+                padding: 14px 20px;
+                background:none;
+                border:2px solid rgba(243, 241, 241, 0.582);
+                background:#0c8066;
+                border-radius:30px;
+                font-size:16px;
+                outline:none;
+            }
+            
+            .bt_grp{
+                display: flex;
+                
+                align-items: center;
+                justify-content: center;
+                gap:10px;
+            }
+            .checkout{
+                text-align: right;
+                padding-left: 1100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap:10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <form action="" method="get">
+            <input type="search" placeholder="Search Your Product here .... " id = "Search_box" >
+        </form>
+        
+    <header>
+        <nav class=" navigation" style="text-align: center; letter-spacing: 5px;"> 
+            <img src="logo.png" alt="Logo" style="height: 50px; width: 50px;">
+            <br>
+            <b> EaravTrends (E.T. Pvt)</b> </nav>
+        <ul>    <li>
+            <!-- <a href=" " style="color: #e4c19d;">  -->
+                <select name="Trending" id="sf" style="color: #e4c19d;"> 
+                    <option> Trending </option>
+                    <option> Product 3 </option>
+                    <option> Product 8</option>
+                </select>
+            <!-- </a> -->
+          </li>
+            
+        <li>
+            <!-- <a href=" " style="color: #e4c19d;">  -->
+                <select name="Connect With Us" id="sf" style="color: #e4c19d;"> 
+                    <option> Connect With Us </option>
+                    <option>Instagram</option>
+                    <option> Facebook</option>
+                    <option> Linkedin </option>
+                    <option> YouTube </option>
+                </select>
+            <!-- </a> -->
+        </li>
+        <li>
+            <a href=" " style="margin-left: 670px;"> 
+                Feedback    &nbsp;&nbsp;&nbsp;&nbsp;
+            </a>
+        </li>
+        <li>
+            <a href=" " style="margin-left: 20px;"> 
+                Contact Us   &nbsp;&nbsp;&nbsp;&nbsp;
+            </a>
+        </li>
+        <li>
+            <a href=" " style="margin-left:10px;"> 
+                Login
+            </a>
+        </li>
+        </ul>
+    </header>
+    <H1 style="text-align: center; color: white;"> Earav Beauty Products Presents </H1>
+    <a href="checkout.html" class="checkout"> <button>Proceed to Checkout</button> </a>
+
+    <div class="container">
+        <!-- Sidebar for Categories and Filters -->
+        
+
+        <div class="main_cont">
+            <div class="sidebar">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Facewashes</a></li>
+                    <li><a href="#">Body Cream</a></li>
+                    <li><a href="#">Herbal Products</a></li>
+                    <li><a href="#">Hair Caring</a></li>
+                    <li><a href="#">Face Products</a></li>
+                </ul>
+    
+                <div class="filters">
+                    <h3>Filters</h3>
+                    <label>
+                        <input type="checkbox"> Price: Low to High
+                    </label>
+                    <label>
+                        <input type="checkbox"> Price: High to Low
+                    </label>
+                    <label>
+                        <input type="checkbox"> Customer Rating: 4+ Stars
+                    </label>
+                    <label>
+                        <input type="checkbox"> On Sale
+                    </label>
+                </div>
+            </div>
+            <div class="back">
+            
+                <div class="backin">
+                    <img src="https://static.vecteezy.com/system/resources/previews/000/197/694/original/premium-cosmetic-brand-advertising-concept-design-with-glitters-vector.jpg" alt="Product Image">
+                    <div class="product-details">
+                        <h1 class="product-title">Product 1</h1>
+                        <p class="product-description">This is my product 1.</p>
+                        <div class="product-price">$20.00</div>
+                        <span class="bt_grp">
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        <button class="buy-now">Buy Now</button>
+                        </span>
+                        
+                    </div>
+                </div>
+            
+                <div class="backin">
+                    <img src="https://freedesignfile.com/upload/2021/08/Design-cover-cosmetic-advertising-vector.jpg" alt="Product Image">
+                    <div class="product-details">
+                        <h1 class="product-title">Product 2</h1>
+                        <p class="product-description">This is my Product 2</p>
+                        <div class="product-price">$25.00</div>
+                        <span class="bt_grp">
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        <button class="buy-now">Buy Now</button>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="backin">
+                    <img src="https://2.bp.blogspot.com/-1rC4KzSw3_A/TmuvVO2AS5I/AAAAAAAAA7M/Mt6ntTHLC1U/s1600/6.jpg" alt="Product Image">
+                    <div class="product-details">
+                        <h1 class="product-title">Product 3</h1>
+                        <p class="product-description">This is my Product 3</p>
+                        <div class="product-price">$30.00</div>
+                        <span class="bt_grp">
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        <button class="buy-now">Buy Now</button>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="backin">
+                    <img src="https://th.bing.com/th/id/OIP.IZqvMKvwNAlbhS1HXI_fvQHaIV?w=720&h=810&rs=1&pid=ImgDetMain" alt="Product Image">
+                    <div class="product-details">
+                        <h1 class="product-title">Product 4</h1>
+                        <p class="product-description">This is my Product 4</p>
+                        <div class="product-price">$35.00</div>
+                        <span class="bt_grp">
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        <button class="buy-now">Buy Now</button>
+                        </span>
+                     </div>
+                </div>
+                
+                <div class="backin">
+                    <img src="https://i5.walmartimages.com/asr/b11f9fa5-5778-4a4b-96b9-63eb5d83bc52.18400642f2a82ba9d67c1eb07ac2c4c9.jpeg" alt="Product Image">
+                    <div class="product-details">
+                        <h1 class="product-title">Product 5</h1>
+                        <p class="product-description">This is my Product 5</p>
+                        <div class="product-price">$40.00</div>
+                        <span class="bt_grp">
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        <button class="buy-now">Buy Now</button>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="backin">
+                    <img src="https://i5.walmartimages.com/asr/5bce35b5-c235-4d07-9dec-6fd8b0232849.7bbc9fcfb563edc840dafab7f0560669.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" alt="Product Image">
+                    <div class="product-details">
+                        <h1 class="product-title">Product 6</h1>
+                        <p class="product-description">This is my Product 6</p>
+                        <div class="product-price">$45.00</div>
+                        <span class="bt_grp">
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        <button class="buy-now">Buy Now</button>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="backin">
+                    <img src="https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/resize-w:540/1103112/0NhVt2UO-aT-1103112_1.jpg" alt="Product Image">
+                    <div class="product-details">
+                        <h1 class="product-title">Product 7</h1>
+                        <p class="product-description">This is my Product 7</p>
+                        <div class="product-price">$50.00</div>
+                        <span class="bt_grp">
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        <button class="buy-now">Buy Now</button>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="backin">
+                    <img src="https://th.bing.com/th/id/OIP.QT3dXH2Z3Gs7EgzOuamyDgHaFu?w=3000&h=2320&rs=1&pid=ImgDetMain" alt="Product Image">
+                    <div class="product-details">
+                        <h1 class="product-title">Product 8</h1>
+                        <p class="product-description">This is my Product 8</p>
+                        <div class="product-price">$55.00</div>
+                        <span class="bt_grp">
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        <button class="buy-now">Buy Now</button>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="backin">
+                    <img src="https://th.bing.com/th/id/OIP.Za9cQ2jlWMNOgWihOjCcNwHaF-?w=520&h=420&rs=1&pid=ImgDetMain" alt="Product Image">
+                    <div class="product-details">
+                        <h1 class="product-title">Product 9</h1>
+                        <p class="product-description">This is my Product 9</p>
+                        <div class="product-price">$60.00</div>
+                        <span class="bt_grp">
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        <button class="buy-now">Buy Now</button>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="backin">
+                    <img src="https://i.pinimg.com/originals/99/36/91/993691c6bad806914d18a2e4e84fc42a.jpg" alt="Product Image">
+                    <div class="product-details">
+                        <h1 class="product-title">Product 10</h1>
+                        <p class="product-description">This is my Product 10</p>
+                        <div class="product-price">$65.00</div>
+                        <span class="bt_grp">
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        <button class="buy-now">Buy Now</button>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="backin">
+                    <img src="https://th.bing.com/th/id/OIP.rYU16RD8gYu3j0Fk04fuagHaHa?w=780&h=780&rs=1&pid=ImgDetMain" alt="Product Image">
+                    <div class="product-details">
+                        <h1 class="product-title">Product 11</h1>
+                        <p class="product-description">This is my Product 11</p>
+                        <div class="product-price">$70.00</div>
+                        <span class="bt_grp">
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        <button class="buy-now">Buy Now</button>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="backin">
+                    <img src="https://i.pinimg.com/474x/d1/f2/b9/d1f2b99bf6489b5b09c1c7614d4756c8.jpg" alt="Product Image">
+                    <div class="product-details">
+                        <h1 class="product-title">Product 12</h1>
+                        <p class="product-description">This is my Product 12</p>
+                        <div class="product-price">$75.00</div>
+                        <span class="bt_grp">
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        <button class="buy-now">Buy Now</button>
+                        </span>
+                    </div>
+                </div> 
+                
+        </div>
+        </div>
+        
+        <footer> <table style="width: 100%; text-align: center; border-collapse: collapse;">
+            <tr>
+                <td><h5 class="f1"><pre>Human skin care 
+products</pre></h5></td>
+                <td><h5 class="f2"><pre>Our Web Services: Scalable 
+Cloud Computing Services</pre></h5></td>
+                <td><h5 class="f3"><pre>Hair caring 
+products</pre></h5></td>
+                <td><h5 class="f4"><pre>Over 2 million Products
+are available</pre></h5></td>
+            </tr>
+            <tr>
+                <td><h5 class="f1"> <pre> Movies, TV Celebrities
+trust on our products </pre></h5></td>
+                <td><h5 class="f2"><pre>Fashion Brands 
+products </pre></h5></td>
+                <td><h5 class="f3"><pre>Our Business: Everything 
+For Your Business </pre></h5></td>
+                <td><h5 class="f4"><pre>Prime Now: 2-Hour 
+Delivery on Everyday
+Items </pre></h5></td>
+            </tr>
+        </table>
+        <hr style="border: 1px solid #e4c19d;">
+        <hr style="border: 1px solid #e4c19d;">
+              <b><h2 style="letter-spacing: 5px;">Thanks for visiting to EaravTrends</h2></b>
+        </footer>
+    </body>
+</html>
